@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planner Arsinta Chick Alfionita</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        document.addEventListener("contextmenu", e => e.preventDefault());
+
+        document.addEventListener("selectstart", e => e.preventDefault());
+
+    </script>
+
+    <style>
+
+        body {
+
+            background-color: #050508;
+
+            font-family: 'Inter', sans-serif;
+
+            color: #E2E8F0;
+
+            overflow-x: hidden;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+        .serif { font-family: 'Playfair Display', serif; }
+
+        .gradient-text {
+
+            background: linear-gradient(to right, #FFFFFF, #A78BFA, #C084FC);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        .btn-primary {
+
+            background: linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%);
+
+        }
+
+        .glass-card {
+
+            background: rgba(15, 15, 25, 0.4);
+
+            backdrop-filter: blur(16px);
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+        @media (max-width: 640px) {
+
+            .mobile-fab {
+
+                position: fixed;
+
+                bottom: 0.5rem;
+
+                right: 1.5rem;
+
+                z-index: 50;
+
+                box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.6);
+
+                width: 56px;
+
+                height: 56px;
+
+                border-radius: 50% !important;
+
+                display: flex !important;
+
+                align-items: center;
+
+                justify-content: center;
+
+                padding: 0 !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body class="selection:bg-purple-500/30">
+
+
+
+    <nav class="border-b border-white/5 bg-[#050508]/80 backdrop-blur-xl sticky top-0 z-[100]">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <div class="flex items-center gap-2">
+
+                <div class="p-2 bg-purple-600/20 rounded-lg">
+
+                    <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
+
+                </div>
+
+                <span class="text-lg font-semibold tracking-tight">Arsinta's <span class="text-purple-400">Future</span></span>
+
+            </div>
+
+
+
+            <div class="hidden md:flex items-center gap-8">
+
+                <button data-nav="all" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Dashboard</button>
+
+                <button data-nav="plan" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Future Plans</button>
+
+                <button data-nav="note" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Professional Notes</button>
+
+                <button id="open-finance-nav" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-500/10 hover:bg-pink-500/20 text-pink-300 border border-pink-500/20 text-sm font-semibold transition-all cursor-pointer">
+                    <i data-lucide="wallet" class="w-4 h-4"></i>
+                    <span>Keuangan</span>
+                    <i data-lucide="lock" class="w-3 h-3 text-pink-400/80"></i>
+                </button>
+
+            </div>
+
+
+
+            <div class="flex items-center gap-3">
+                <button id="open-finance-mobile-nav" class="md:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/20 text-xs font-semibold cursor-pointer" title="Keuangan">
+                    <i data-lucide="wallet" class="w-4 h-4"></i>
+                    <span>Keuangan</span>
+                    <i data-lucide="lock" class="w-3 h-3 text-pink-400/80"></i>
+                </button>
+
+                <button id="add-btn-nav" class="btn-primary text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg shadow-purple-500/20 mobile-fab">
+
+                    <i data-lucide="plus" class="w-5 h-5 md:w-4 md:h-4"></i>
+
+                    <span class="hidden md:inline"></span>
+
+                </button>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+
+        <header class="mb-16 text-center md:text-left">
+
+            <h1 class="serif text-4xl md:text-7xl mb-6 leading-[1.1]">
+
+                Hello, <br/>
+
+                <span class="gradient-text italic font-bold">Arsinta Chick Alfionita.</span>
+
+            </h1>
+
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed mx-auto md:mx-0">
+
+                Ini adalah ruang khusus untuk merancang masa depan dan mencatat setiap langkahmu sayang. Teruslah bersinar!
+
+            </p>
+
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed mx-auto md:mx-0">
+
+               Dari adit,semangat sayang🫰🏻
+
+            </p>
+
+            <!-- Tombol Keuangan (Dengan Password / PIN) -->
+            <div class="mt-8 flex flex-wrap items-center gap-3 justify-center md:justify-start">
+                <button id="open-finance-hero" class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-pink-500/20 via-rose-500/20 to-fuchsia-500/20 hover:from-pink-500/30 hover:to-rose-500/30 border border-pink-500/30 text-pink-300 font-semibold text-sm transition-all hover:scale-[1.02] shadow-xl shadow-pink-500/10 cursor-pointer">
+                    <span class="p-2 bg-pink-500/20 rounded-xl text-pink-400">
+                        <i data-lucide="wallet" class="w-5 h-5"></i>
+                    </span>
+                    <div class="text-left">
+                        <div class="font-bold text-white text-sm">Atur Keuangan & Multi-Dompet</div>
+                        <div class="text-[11px] text-pink-300/80">Cash, DANA & SeaBank</div>
+                    </div>
+                    <span class="ml-2 text-[10px] px-2.5 py-1 rounded-full bg-pink-500/20 text-pink-300 font-mono flex items-center gap-1 border border-pink-500/30">
+                        <i data-lucide="lock" class="w-3.5 h-3.5"></i> PIN Keamanan 💖
+                    </span>
+                </button>
+            </div>
+
+        </header>
+
+
+
+        <div class="flex flex-col gap-6 mb-10">
+
+            <div class="relative max-w-xl">
+
+                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600"></i>
+
+                <input type="text" id="search-input" placeholder="Cari rencanamu..." 
+
+                       class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:outline-none focus:border-purple-500/50 transition-all text-sm">
+
+            </div>
+
+
+
+            <div class="flex items-center gap-2 p-1 bg-white/5 rounded-2xl w-full md:w-fit overflow-x-auto">
+
+                <button data-filter="all" class="filter-btn active px-6 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all bg-white/10 text-white">All</button>
+
+                <button data-filter="plan" class="filter-btn px-6 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all text-gray-500 hover:text-white">Plans</button>
+
+                <button data-filter="note" class="filter-btn px-6 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all text-gray-500 hover:text-white">Notes</button>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="plans-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            </div>
+
+    </main>
+
+
+
+    <div id="modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="modal-overlay"></div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 w-full max-w-lg rounded-3xl relative z-10 overflow-hidden shadow-2xl">
+
+            <div class="p-6 border-b border-white/5 flex justify-between items-center">
+
+                <h3 class="serif text-xl" id="modal-title">Create Entry</h3>
+
+                <button id="close-modal" class="hover:bg-white/5 p-2 rounded-full transition-colors">
+
+                    <i data-lucide="x" class="w-5 h-5 text-gray-500"></i>
+
+                </button>
+
+            </div>
+
+            <form id="plan-form" class="p-6 space-y-4">
+
+                <input type="hidden" id="edit-id">
+
+                <div class="flex gap-2 p-1 bg-white/5 rounded-xl mb-4">
+
+                    <label class="flex-1 cursor-pointer">
+
+                        <input type="radio" name="type" value="plan" checked class="hidden peer">
+
+                        <div class="peer-checked:bg-white peer-checked:text-black text-[10px] font-bold uppercase p-3 rounded-lg text-center transition-all">Plan</div>
+
+                    </label>
+
+                    <label class="flex-1 cursor-pointer">
+
+                        <input type="radio" name="type" value="note" class="hidden peer">
+
+                        <div class="peer-checked:bg-white peer-checked:text-black text-[10px] font-bold uppercase p-3 rounded-lg text-center transition-all">Note</div>
+
+                    </label>
+
+                </div>
+
+                <input type="text" id="plan-title" required placeholder="Judul Rencana" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:border-purple-500">
+
+                <textarea id="plan-note" required rows="5" placeholder="Detail rencana..." class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:border-purple-500 resize-none"></textarea>
+
+                <button type="submit" class="w-full py-4 btn-primary rounded-xl font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all">Save Commitment</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- AUTHENTICATION MODAL (KHUSUS PIN 4-DIGIT PINK GIRLY AESTHETIC) -->
+    <div id="finance-auth-modal" style="display: none;" class="fixed inset-0 z-[200] bg-black/85 backdrop-blur-2xl flex items-center justify-center p-4">
+        <div class="glass-card max-w-sm w-full p-8 rounded-3xl border border-pink-500/20 shadow-[0_0_50px_rgba(244,114,182,0.15)] text-center relative overflow-hidden">
+            <!-- Decorative Pink Glow Background Orbs -->
+            <div class="absolute -top-16 -left-16 w-36 h-36 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-16 -right-16 w-36 h-36 bg-rose-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <button id="close-finance-modal" type="button" class="absolute top-5 right-5 p-2 rounded-full hover:bg-white/10 text-pink-300/70 hover:text-white transition-all cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Cute Pink Icon Header -->
+            <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-tr from-pink-500/20 via-rose-500/20 to-fuchsia-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 shadow-lg shadow-pink-500/20">
+                <i data-lucide="lock-keyhole" class="w-8 h-8 text-pink-400"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-1 flex items-center justify-center gap-1.5">
+                <span>Keamanan Keuangan</span>
+                <span class="text-pink-400">💕</span>
+            </h3>
+            <p class="text-xs text-pink-200/70 mb-4">Masukkan 4 digit PIN cantikmu untuk membuka brankas Arsinta.</p>
+
+            <!-- Lockout Countdown Box (Shown after 3x fails) -->
+            <div id="pin-lockout-box" class="hidden mb-4 p-3.5 rounded-2xl bg-gradient-to-r from-rose-500/20 via-pink-500/20 to-purple-500/20 border border-rose-500/40 text-rose-200 text-xs shadow-lg shadow-pink-500/10">
+                <div class="flex items-center justify-center gap-2 font-bold text-rose-300 mb-1">
+                    <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400 animate-bounce"></i>
+                    <span>Akses Terkunci Sementara</span>
+                </div>
+                <p class="text-[11px] text-pink-200/90 mb-2">Terlalu banyak percobaan salah. Coba lagi dalam:</p>
+                <div class="inline-block px-4 py-1.5 rounded-xl bg-black/50 border border-rose-500/40 text-rose-300 font-mono text-base font-extrabold tracking-widest" id="lockout-countdown-display">
+                    01:00
+                </div>
+            </div>
+
+            <!-- PIN Dots -->
+            <div class="flex justify-center gap-3.5 my-3">
+                <div class="finance-pin-dot w-4 h-4 rounded-full border-2 border-pink-400/30 transition-all duration-200"></div>
+                <div class="finance-pin-dot w-4 h-4 rounded-full border-2 border-pink-400/30 transition-all duration-200"></div>
+                <div class="finance-pin-dot w-4 h-4 rounded-full border-2 border-pink-400/30 transition-all duration-200"></div>
+                <div class="finance-pin-dot w-4 h-4 rounded-full border-2 border-pink-400/30 transition-all duration-200"></div>
+            </div>
+            <div id="pin-modal-error" class="text-xs text-rose-400 min-h-[1.25rem] mb-2 font-medium"></div>
+
+            <!-- Numpad -->
+            <div id="pin-numpad-grid" class="grid grid-cols-3 gap-2.5 max-w-[240px] mx-auto mb-4 transition-opacity duration-200">
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="1">1</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="2">2</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="3">3</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="4">4</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="5">5</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="6">6</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="7">7</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="8">8</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="9">9</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-rose-500/20 text-xs font-semibold text-rose-400 border border-white/5 hover:border-rose-500/30 transition-all flex items-center justify-center cursor-pointer" id="pin-key-clear">Hapus</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 active:scale-95 text-base font-bold text-pink-100 border border-white/5 hover:border-pink-500/30 transition-all cursor-pointer shadow-sm" data-digit="0">0</button>
+                <button type="button" class="pin-key p-3.5 rounded-2xl bg-white/5 hover:bg-pink-500/20 text-pink-300 border border-white/5 hover:border-pink-500/30 transition-all flex items-center justify-center cursor-pointer" id="pin-key-back">
+                    <i data-lucide="delete" class="w-4 h-4 pointer-events-none"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] text-pink-300/60 pt-3 border-t border-pink-500/10">
+                <button type="button" id="btn-modal-change-pin" class="text-pink-400 hover:text-pink-300 hover:underline flex items-center gap-1 font-medium cursor-pointer">
+                    <i data-lucide="key-round" class="w-3.5 h-3.5"></i> Ubah PIN
+                </button>
+                <button type="button" id="cancel-finance-modal" class="text-gray-400 hover:text-white cursor-pointer">Batal</button>
+            </div>
+            <span id="pin-modal-default-hint" class="hidden">1234</span>
+        </div>
+    </div>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+        import { getDatabase, ref, push, onValue, remove, update, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+
+
+        const firebaseConfig = {
+
+            apiKey: "AIzaSyA3TLIhdspdoekbP2gjjVHu8cGNyEuk4zY",
+
+            authDomain: "chika-c61d6.firebaseapp.com",
+
+            databaseURL: "https://chika-c61d6-default-rtdb.firebaseio.com",
+
+            projectId: "chika-c61d6",
+
+            storageBucket: "chika-c61d6.firebasestorage.app",
+
+            messagingSenderId: "434591898726",
+
+            appId: "1:434591898726:web:5885443dcb6177db1ae1a7"
+
+        };
+
+
+
+        const app = initializeApp(firebaseConfig);
+
+        const db = getDatabase(app);
+
+        const dbRef = ref(db, 'items');
+
+
+
+        const plansGrid = document.getElementById('plans-grid');
+
+        const modal = document.getElementById('modal');
+
+        const planForm = document.getElementById('plan-form');
+
+        const searchInput = document.getElementById('search-input');
+
+        
+
+        let allItems = [];
+
+        let activeFilter = 'all';
+
+
+
+        function formatDateTime(timestamp) {
+
+            if (!timestamp) return "Waktu tidak diketahui";
+
+            const date = new Date(timestamp);
+
+            return date.toLocaleDateString('id-ID', {
+
+                weekday: 'long', 
+
+                year: 'numeric', 
+
+                month: 'long', 
+
+                day: 'numeric',
+
+                hour: '2-digit', 
+
+                minute: '2-digit',
+
+                second: '2-digit'
+
+            });
+
+        }
+
+
+
+        onValue(dbRef, (snap) => {
+
+            const data = snap.val();
+
+            allItems = data ? Object.keys(data).map(k => ({ id: k, ...data[k] })) : [];
+
+            render();
+
+        });
+
+
+
+        function render() {
+
+            const term = searchInput.value.toLowerCase();
+
+            const filtered = allItems.filter(i => {
+
+                const matchType = activeFilter === 'all' || i.type === activeFilter;
+
+                const matchSearch = (i.title || "").toLowerCase().includes(term) || (i.note || "").toLowerCase().includes(term);
+
+                return matchType && matchSearch;
+
+            }).sort((a, b) => b.createdAt - a.createdAt);
+
+
+
+            plansGrid.innerHTML = filtered.map(item => `
+
+                <div class="glass-card p-6 md:p-8 rounded-3xl group relative">
+
+                    <div class="flex justify-between items-start mb-4">
+
+                        <div class="flex flex-col gap-1.5">
+
+                            <span class="w-fit px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-widest ${item.type === 'plan' ? 'bg-purple-500/20 text-purple-400' : 'bg-blue-500/20 text-blue-400'}">
+
+                                ${item.type}
+
+                            </span>
+
+                            <span class="text-[10px] md:text-xs text-gray-500 font-medium leading-none">
+
+                                ${formatDateTime(item.createdAt)}
+
+                            </span>
+
+                        </div>
+
+                        <div class="flex gap-1 md:opacity-0 group-hover:opacity-100 transition-opacity">
+
+                            <button onclick="window.editEntry('${item.id}')" class="p-2 hover:bg-white/10 rounded-lg text-gray-400 hover:text-white transition-all">
+
+                                <i data-lucide="edit-3" class="w-4 h-4"></i>
+
+                            </button>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                    <h3 class="serif text-xl md:text-2xl font-bold mb-3">${item.title}</h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed whitespace-pre-wrap">${item.note}</p>
+
+                </div>
+
+            `).join('');
+
+            lucide.createIcons();
+
+        }
+
+
+
+        window.deleteEntry = (id) => {
+
+            if(confirm('Hapus jejak rencana ini?')) {
+
+                remove(ref(db, `items/${id}`));
+
+            }
+
+        };
+
+
+
+        window.editEntry = (id) => {
+
+            const item = allItems.find(i => i.id === id);
+
+            if(!item) return;
+
+            document.getElementById('edit-id').value = item.id;
+
+            document.getElementById('plan-title').value = item.title;
+
+            document.getElementById('plan-note').value = item.note;
+
+            document.querySelector(`input[name="type"][value="${item.type}"]`).checked = true;
+
+            document.getElementById('modal-title').innerText = "Edit Commitment";
+
+            modal.classList.remove('hidden');
+
+        };
+
+
+
+        const openModal = () => {
+
+            planForm.reset();
+
+            document.getElementById('edit-id').value = '';
+
+            document.getElementById('modal-title').innerText = "Create Entry";
+
+            modal.classList.remove('hidden');
+
+        };
+
+
+
+        document.getElementById('add-btn-nav').onclick = openModal;
+
+        document.getElementById('close-modal').onclick = () => modal.classList.add('hidden');
+
+        document.getElementById('modal-overlay').onclick = () => modal.classList.add('hidden');
+
+
+
+        document.querySelectorAll('.filter-btn, .nav-link').forEach(btn => {
+
+            btn.addEventListener('click', () => {
+
+                activeFilter = btn.dataset.filter || btn.dataset.nav;
+
+                document.querySelectorAll('.filter-btn').forEach(b => {
+
+                    b.classList.remove('bg-white/10', 'text-white');
+
+                    if(b.dataset.filter === activeFilter) b.classList.add('bg-white/10', 'text-white');
+
+                });
+
+                render();
+
+            });
+
+        });
+
+
+
+        searchInput.oninput = render;
+
+
+
+        planForm.onsubmit = async (e) => {
+
+            e.preventDefault();
+
+            const id = document.getElementById('edit-id').value;
+
+            const now = Date.now();
+
+
+
+            const data = {
+
+                title: document.getElementById('plan-title').value,
+
+                note: document.getElementById('plan-note').value,
+
+                type: document.querySelector('input[name="type"]:checked').value,
+
+                createdAt: id ? allItems.find(i => i.id === id).createdAt : now
+
+            };
+
+
+
+            try {
+
+                if(id) {
+
+                    await update(ref(db, `items/${id}`), data);
+
+                } else {
+
+                    await push(dbRef, data);
+
+                }
+
+                modal.classList.add('hidden');
+
+                planForm.reset();
+
+            } catch (err) {
+
+                alert("Gagal menyimpan data.");
+
+            }
+
+        };
+
+
+
+        lucide.createIcons();
+
+        // ==========================================
+        // PIN SECURITY & TIERED LOCKOUT MANAGER (PINK GIRLY AESTHETIC)
+        // ==========================================
+        const financeModal = document.getElementById('finance-auth-modal');
+        const pinLockoutBox = document.getElementById('pin-lockout-box');
+        const lockoutTimerDisplay = document.getElementById('lockout-countdown-display');
+        const pinNumpadGrid = document.getElementById('pin-numpad-grid');
+
+        let pinValue = "";
+        let activePin = localStorage.getItem('chika_pin') || "1234";
+        let lockoutTimerInterval = null;
+
+        // Realtime sync PIN from Firebase Realtime Database
+        onValue(ref(db, 'security/pin'), snap => {
+            if (snap.val()) {
+                activePin = String(snap.val());
+                localStorage.setItem('chika_pin', activePin);
+                const hintEl = document.getElementById('pin-modal-default-hint');
+                if (hintEl) hintEl.textContent = activePin;
+            }
+        });
+
+        // Lockout penalty tiers: 1 min -> 5 min -> 10 min -> 1 hour
+        const LOCKOUT_TIERS = [
+            { durationMs: 60 * 1000, label: "1 Menit" },
+            { durationMs: 5 * 60 * 1000, label: "5 Menit" },
+            { durationMs: 10 * 60 * 1000, label: "10 Menit" },
+            { durationMs: 60 * 60 * 1000, label: "1 Jam" }
+        ];
+
+        function isCurrentlyLockedOut() {
+            const until = parseInt(localStorage.getItem('chika_lockout_until') || "0", 10);
+            return until > Date.now();
+        }
+
+        function formatCountdown(ms) {
+            const totalSec = Math.max(0, Math.ceil(ms / 1000));
+            const hours = Math.floor(totalSec / 3600);
+            const mins = Math.floor((totalSec % 3600) / 60);
+            const secs = totalSec % 60;
+            if (hours > 0) {
+                return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }
+            return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        function checkAndApplyLockoutState() {
+            const until = parseInt(localStorage.getItem('chika_lockout_until') || "0", 10);
+            const now = Date.now();
+
+            if (until > now) {
+                if (pinLockoutBox) pinLockoutBox.classList.remove('hidden');
+                if (pinNumpadGrid) pinNumpadGrid.classList.add('opacity-30', 'pointer-events-none');
+                const errEl = document.getElementById('pin-modal-error');
+                if (errEl) errEl.textContent = "";
+
+                if (lockoutTimerInterval) clearInterval(lockoutTimerInterval);
+                const updateDisplay = () => {
+                    const remaining = until - Date.now();
+                    if (remaining <= 0) {
+                        clearInterval(lockoutTimerInterval);
+                        lockoutTimerInterval = null;
+                        localStorage.removeItem('chika_lockout_until');
+                        if (pinLockoutBox) pinLockoutBox.classList.add('hidden');
+                        if (pinNumpadGrid) pinNumpadGrid.classList.remove('opacity-30', 'pointer-events-none');
+                        if (errEl) errEl.textContent = "Waktu tunggu selesai. Silakan masukkan PIN.";
+                    } else {
+                        if (lockoutTimerDisplay) lockoutTimerDisplay.textContent = formatCountdown(remaining);
+                    }
+                };
+                updateDisplay();
+                lockoutTimerInterval = setInterval(updateDisplay, 1000);
+                return true;
+            } else {
+                if (lockoutTimerInterval) {
+                    clearInterval(lockoutTimerInterval);
+                    lockoutTimerInterval = null;
+                }
+                localStorage.removeItem('chika_lockout_until');
+                if (pinLockoutBox) pinLockoutBox.classList.add('hidden');
+                if (pinNumpadGrid) pinNumpadGrid.classList.remove('opacity-30', 'pointer-events-none');
+                return false;
+            }
+        }
+
+        const openFinanceAuth = () => {
+            pinValue = "";
+            updatePinDots();
+            const errEl = document.getElementById('pin-modal-error');
+            if (errEl) errEl.textContent = "";
+            checkAndApplyLockoutState();
+            if (financeModal) {
+                financeModal.classList.remove('hidden');
+                financeModal.style.display = 'flex';
+            }
+        };
+
+        const closeFinanceAuth = () => {
+            if (financeModal) {
+                financeModal.classList.add('hidden');
+                financeModal.style.display = 'none';
+            }
+        };
+
+        function updatePinDots() {
+            const dots = document.querySelectorAll('.finance-pin-dot');
+            dots.forEach((dot, idx) => {
+                if (idx < pinValue.length) {
+                    dot.classList.add('bg-gradient-to-tr', 'from-pink-500', 'to-rose-400', 'border-pink-400', 'shadow-[0_0_12px_rgba(244,114,182,0.8)]', 'scale-110');
+                    dot.classList.remove('border-pink-400/30');
+                } else {
+                    dot.classList.remove('bg-gradient-to-tr', 'from-pink-500', 'to-rose-400', 'border-pink-400', 'shadow-[0_0_12px_rgba(244,114,182,0.8)]', 'scale-110');
+                    dot.classList.add('border-pink-400/30');
+                }
+            });
+        }
+
+        function triggerLockoutPenalty() {
+            const currentTier = parseInt(localStorage.getItem('chika_lockout_tier') || "0", 10);
+            const penalty = LOCKOUT_TIERS[Math.min(currentTier, LOCKOUT_TIERS.length - 1)];
+            const lockUntil = Date.now() + penalty.durationMs;
+
+            localStorage.setItem('chika_lockout_until', lockUntil);
+            localStorage.setItem('chika_lockout_tier', currentTier + 1);
+            localStorage.setItem('chika_fail_count', 0);
+
+            checkAndApplyLockoutState();
+
+            if (navigator.vibrate) navigator.vibrate([150, 100, 150]);
+
+            if (window.Swal) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Akses Terkunci Sementara! 🔒',
+                    html: `Kamu sudah salah PIN sebanyak <b>3 kali</b>.<br><br>Sistem mengamankan brankas, silakan tunggu selama <b class="text-pink-400 text-base">${penalty.label}</b> ya sayang 💕`,
+                    confirmButtonColor: '#EC4899',
+                    confirmButtonText: 'Aku Paham',
+                    background: '#140c1a',
+                    color: '#fdf2f8',
+                    customClass: {
+                        popup: 'rounded-3xl border border-pink-500/30 shadow-2xl shadow-pink-500/20'
+                    }
+                });
+            }
+        }
+
+        function handlePinDigit(digit) {
+            if (isCurrentlyLockedOut()) return;
+
+            if (pinValue.length < 4) {
+                pinValue += String(digit);
+                updatePinDots();
+                const errEl = document.getElementById('pin-modal-error');
+                if (errEl) errEl.textContent = "";
+
+                if (pinValue.length === 4) {
+                    if (pinValue === activePin) {
+                        localStorage.setItem('chika_fail_count', 0);
+                        localStorage.setItem('chika_lockout_tier', 0);
+                        localStorage.removeItem('chika_lockout_until');
+
+                        if (navigator.vibrate) navigator.vibrate([40, 40]);
+
+                        if (window.Swal) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'PIN Benar! 💖',
+                                text: 'Membuka brankas keuangan Arsinta...',
+                                timer: 800,
+                                showConfirmButton: false,
+                                background: '#140c1a',
+                                color: '#fdf2f8',
+                                customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                            }).then(() => {
+                                sessionStorage.setItem('chika_finance_auth', 'granted');
+                                window.location.href = 'finance.html';
+                            });
+                        } else {
+                            sessionStorage.setItem('chika_finance_auth', 'granted');
+                            window.location.href = 'finance.html';
+                        }
+                    } else {
+                        let fails = parseInt(localStorage.getItem('chika_fail_count') || "0", 10) + 1;
+                        localStorage.setItem('chika_fail_count', fails);
+
+                        if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+
+                        if (fails >= 3) {
+                            pinValue = "";
+                            updatePinDots();
+                            triggerLockoutPenalty();
+                        } else {
+                            const attemptsLeft = 3 - fails;
+                            if (errEl) errEl.textContent = `PIN salah! Sisa kesempatan: ${attemptsLeft}x`;
+                            setTimeout(() => {
+                                pinValue = "";
+                                updatePinDots();
+                            }, 500);
+                        }
+                    }
+                }
+            }
+        }
+
+        function handlePinBack() {
+            if (isCurrentlyLockedOut()) return;
+            pinValue = pinValue.slice(0, -1);
+            updatePinDots();
+            const errEl = document.getElementById('pin-modal-error');
+            if (errEl) errEl.textContent = "";
+        }
+
+        function handlePinClear() {
+            if (isCurrentlyLockedOut()) return;
+            pinValue = "";
+            updatePinDots();
+            const errEl = document.getElementById('pin-modal-error');
+            if (errEl) errEl.textContent = "";
+        }
+
+        // Ubah PIN shortcut via SweetAlert2
+        async function changePinPrompt() {
+            if (isCurrentlyLockedOut()) {
+                if (window.Swal) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Akses Terkunci',
+                        text: 'Tunggu waktu lockout selesai sebelum mengubah PIN ya.',
+                        confirmButtonColor: '#EC4899',
+                        background: '#140c1a',
+                        color: '#fdf2f8',
+                        customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                    });
+                }
+                return;
+            }
+
+            if (window.Swal) {
+                const { value: oldPin } = await Swal.fire({
+                    title: 'Ubah PIN Keamanan 💕',
+                    text: 'Masukkan PIN lama saat ini:',
+                    input: 'password',
+                    inputPlaceholder: 'PIN Lama (4 digit)',
+                    inputAttributes: { maxlength: 4, inputmode: 'numeric', autocapitalize: 'off' },
+                    showCancelButton: true,
+                    cancelButtonText: 'Batal',
+                    confirmButtonText: 'Lanjut',
+                    confirmButtonColor: '#EC4899',
+                    cancelButtonColor: '#4B5563',
+                    background: '#140c1a',
+                    color: '#fdf2f8',
+                    customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                });
+
+                if (!oldPin) return;
+
+                if (oldPin !== activePin) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'PIN Lama Salah! 🔒',
+                        html: `PIN lama yang kamu masukkan tidak cocok.<br><span class="text-xs text-pink-300/80">PIN aktif saat ini: <b>${activePin}</b></span>`,
+                        confirmButtonColor: '#EC4899',
+                        background: '#140c1a',
+                        color: '#fdf2f8',
+                        customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                    });
+                    return;
+                }
+
+                const { value: newPin } = await Swal.fire({
+                    title: 'PIN Baru 💖',
+                    text: 'Masukkan 4 digit PIN baru:',
+                    input: 'password',
+                    inputPlaceholder: '4 digit angka baru',
+                    inputAttributes: { maxlength: 4, inputmode: 'numeric', autocapitalize: 'off' },
+                    showCancelButton: true,
+                    cancelButtonText: 'Batal',
+                    confirmButtonText: 'Simpan PIN Baru',
+                    confirmButtonColor: '#EC4899',
+                    cancelButtonColor: '#4B5563',
+                    background: '#140c1a',
+                    color: '#fdf2f8',
+                    customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                });
+
+                if (newPin === undefined) return;
+
+                if (!newPin || newPin.length !== 4 || isNaN(newPin)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Format Tidak Sesuai',
+                        text: 'PIN baru harus berupa 4 digit angka!',
+                        confirmButtonColor: '#EC4899',
+                        background: '#140c1a',
+                        color: '#fdf2f8',
+                        customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                    });
+                    return;
+                }
+
+                try {
+                    await set(ref(db, 'security/pin'), newPin);
+                    activePin = newPin;
+                    localStorage.setItem('chika_pin', newPin);
+                    const hintEl = document.getElementById('pin-modal-default-hint');
+                    if (hintEl) hintEl.textContent = newPin;
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'PIN Berhasil Diubah! 🎉',
+                        text: 'PIN barumu sekarang: ' + newPin,
+                        confirmButtonColor: '#EC4899',
+                        background: '#140c1a',
+                        color: '#fdf2f8',
+                        customClass: { popup: 'rounded-3xl border border-pink-500/30' }
+                    });
+                } catch (e) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal Menyimpan',
+                        text: e.message,
+                        confirmButtonColor: '#EC4899',
+                        background: '#140c1a',
+                        color: '#fdf2f8'
+                    });
+                }
+            } else {
+                const oldPin = prompt("Masukkan PIN saat ini:");
+                if (oldPin === null) return;
+                if (oldPin !== activePin) {
+                    alert("PIN lama tidak sesuai!");
+                    return;
+                }
+                const newPin = prompt("Masukkan PIN baru (4 digit angka):");
+                if (!newPin || newPin.length !== 4 || isNaN(newPin)) {
+                    alert("PIN baru harus berupa 4 digit angka!");
+                    return;
+                }
+                try {
+                    await set(ref(db, 'security/pin'), newPin);
+                    activePin = newPin;
+                    localStorage.setItem('chika_pin', newPin);
+                    alert("PIN berhasil diubah menjadi: " + newPin);
+                } catch (e) {
+                    alert("Gagal mengubah PIN: " + e.message);
+                }
+            }
+        }
+
+        // Event delegation for all finance authentication actions
+        document.addEventListener('click', (e) => {
+            // Open modal triggers
+            if (e.target.closest('#open-finance-hero, #open-finance-nav, #open-finance-mobile-nav')) {
+                e.preventDefault();
+                openFinanceAuth();
+                return;
+            }
+
+            // Close modal triggers
+            if (e.target.closest('#close-finance-modal, #cancel-finance-modal')) {
+                e.preventDefault();
+                closeFinanceAuth();
+                return;
+            }
+
+            // Ubah PIN trigger
+            if (e.target.closest('#btn-modal-change-pin')) {
+                e.preventDefault();
+                changePinPrompt();
+                return;
+            }
+
+            // Numpad buttons
+            const digitBtn = e.target.closest('.pin-key[data-digit]');
+            if (digitBtn) {
+                e.preventDefault();
+                handlePinDigit(digitBtn.dataset.digit);
+                return;
+            }
+            if (e.target.closest('#pin-key-back')) {
+                e.preventDefault();
+                handlePinBack();
+                return;
+            }
+            if (e.target.closest('#pin-key-clear')) {
+                e.preventDefault();
+                handlePinClear();
+                return;
+            }
+        });
+
+        // Support physical keyboard typing (0-9, Backspace, Escape)
+        window.addEventListener('keydown', (e) => {
+            if (financeModal && financeModal.style.display !== 'none' && !financeModal.classList.contains('hidden')) {
+                if (e.key >= '0' && e.key <= '9') {
+                    handlePinDigit(e.key);
+                } else if (e.key === 'Backspace') {
+                    handlePinBack();
+                } else if (e.key === 'Escape') {
+                    closeFinanceAuth();
+                }
+            }
+        });
+
+        function unlockFinance() {
+            sessionStorage.setItem('chika_finance_auth', 'granted');
+            window.location.href = 'finance.html';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
